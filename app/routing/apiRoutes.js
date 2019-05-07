@@ -1,7 +1,7 @@
 var friends = require("../data/friends.js")
 
 
-module.exports = function (app) {
+var apiRoutes = function (app) {
 
   //get route for api/friends - friends already populated in array
     app.get('/api/friends', function(req,res){
@@ -25,7 +25,7 @@ module.exports = function (app) {
         var scoreComparisionArray = [];
         for(var i=0; i < friendsData.length; i++){
             var currentComparison = 0;
-            for(var j=0; j < newFriend.scores.length; j++{
+            for(var j=0; j < newFriend.scores.length; j++) {
                 currentComparison += Math.abs( newFriend.scores[j] - friendsData[i].sores[j] );
             }
             scoreComparisionArray.push(currentComparison);
@@ -57,4 +57,4 @@ module.exports = function (app) {
 
 }
 
-modeule.exports = apiRoutes;
+module.exports = apiRoutes;
